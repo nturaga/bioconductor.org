@@ -17,10 +17,6 @@ or [Microsoft Azure Container Instances](https://azure.microsoft.com/en-us/servi
 - [Why Use Containers](#intro)
   * [Goals for new containers](#goals)
 - [Current Containers](#current)
-- [Deprecation Notice](#deprecation)
-  * [Legacy Containers](#legacy)
-  * [Reason for deprecation](#reason)
-  * [Reporting issues](#issues)
 - [Using Containers](#usage)
   * [Running Containers](#running)
   * [Mounting Additional Volume](#mounting)
@@ -30,6 +26,10 @@ or [Microsoft Azure Container Instances](https://azure.microsoft.com/en-us/servi
   * [Using containers hosted on Microsoft Container Registry](#mcr)
   * [Use Azure Container Instances to run bioconductor images on-demand on Azure](#aci)
 - [How to contribute](#contribute)
+- [Deprecation Notice](#deprecation)
+  * [Legacy Containers](#legacy)
+  * [Reason for deprecation](#reason)
+  * [Reporting issues](#issues)
 - [Acknowledgements](#acknowledgements)
 
 <a name="quickstart"></a>
@@ -122,97 +122,6 @@ For each supported version of Bioconductor, we provide
 
 Bioconductor's Docker images are stored in [Docker Hub](https://hub.docker.com/u/bioconductor/);
 the source Dockerfile(s) are in [Github](https://github.com/Bioconductor/bioconductor_docker).
-
-<a name="deprecation"></a>
-## Deprecation Notice
-
-For previous users of docker containers for Bioconductor, please note
-that we are deprecating the following images. These images were
-maintained by Bioconductor Core, and also the community.
-
-<a name="legacy"></a>
-### Legacy Containers
-
-These images are NO LONGER MAINTAINED and updated. They will however
-be available to use should a user choose. They are not
-supported anymore by the Bioconductor Core team.
-
-Bioconductor Core Team: bioc-issue-bot@bioconductor.org
-
-* [bioconductor/devel_base2](https://hub.docker.com/r/bioconductor/devel_base2/)
-* [bioconductor/devel_core2](https://hub.docker.com/r/bioconductor/devel_core2/)
-* [bioconductor/release_base2](https://hub.docker.com/r/bioconductor/release_base2/)
-* [bioconductor/release_core2](https://hub.docker.com/r/bioconductor/release_core2/)
-
-Steffen Neumann: sneumann@ipb-halle.de, Maintained as part of the "PhenoMeNal, funded by Horizon2020 grant 654241"
-
-* [bioconductor/devel_protmetcore2](https://hub.docker.com/r/bioconductor/devel_protmetcore2/)
-* [bioconductor/devel_metabolomics2](https://hub.docker.com/r/bioconductor/devel_metabolomics2/)
-* [bioconductor/release_protmetcore2](https://hub.docker.com/r/bioconductor/release_protmetcore2/)
-* [bioconductor/release_metabolomics2](https://hub.docker.com/r/bioconductor/release_metabolomics2/)
-
-Laurent Gatto: lg390@cam.ac.uk
-
-* [bioconductor/devel_mscore2](https://hub.docker.com/r/bioconductor/devel_mscore2/)
-* [bioconductor/devel_protcore2](https://hub.docker.com/r/bioconductor/devel_protcore2/)
-* [bioconductor/devel_proteomics2](https://hub.docker.com/r/bioconductor/devel_proteomics2/)
-* [bioconductor/release_mscore2](https://hub.docker.com/r/bioconductor/release_mscore2/)
-* [bioconductor/release_protcore2](https://hub.docker.com/r/bioconductor/release_protcore2/)
-* [bioconductor/release_proteomics2](https://hub.docker.com/r/bioconductor/release_proteomics2/)
-
-RGLab: wjiang2@fredhutch.org
-
-* [bioconductor/devel_cytometry2](https://hub.docker.com/r/bioconductor/devel_cytometry2/)
-* [bioconductor/release_cytometry2](https://hub.docker.com/r/bioconductor/release_cytometry2/)
-
-First iteration containers
-
-* bioconductor/devel_base
-* bioconductor/devel_core
-* bioconductor/devel_flow
-* bioconductor/devel_microarray
-* bioconductor/devel_proteomics
-* bioconductor/devel_sequencing
-* bioconductor/devel_metabolomics
-* bioconductor/release_base
-* bioconductor/release_core
-* bioconductor/release_flow
-* bioconductor/release_microarray
-* bioconductor/release_proteomics
-* bioconductor/release_sequencing
-* bioconductor/release_metabolomics
-
-<a name="reason"></a>
-### Reason for deprecation
-
-The new Bioconductor Docker image `bioconductor/bioconductor_docker`
-makes it possible to easily install any package the user chooses since
-all the system dependencies are built in to this new image. The
-previous images did not have all the system dependencies built in to
-the image. The new installation of packages can be done with,
-
-	BiocManager::install(c("package_name", "package_name"))
-
-Other reasons for deprecation:
-
- - the chain of inheritance of Docker images was too complex and hard
-   to maintain.
-
- - Hard to extend because there were multiple flavors of images.
-
- - Naming convention was making things harder to use.
-
- - Images which were not maintained were not deprecated.
-
-<a name="issues"></a>
-### Reporting Issues
-
-Please report issues with the new set of images on [GitHub Issues](https://github.com/Bioconductor/bioconductor_docker/issues) or
-the [Bioc-devel](mailto:bioc-devel@r-project.org) mailing list.
-
-These issues can be questions about anything related to this piece of
-software such as, usage, extending Docker images, enhancements, and
-bug reports.
 
 <a name="usage"></a>
 ## Using the containers
@@ -736,6 +645,97 @@ community members can contribute images
 [here](https://github.com/Bioconductor/bioconductor_docker/blob/master/best_practices.md).
 
 link: https://github.com/Bioconductor/bioconductor_docker/blob/master/best_practices.md
+
+<a name="deprecation"></a>
+## Deprecation Notice
+
+For previous users of docker containers for Bioconductor, please note
+that we are deprecating the following images. These images were
+maintained by Bioconductor Core, and also the community.
+
+<a name="legacy"></a>
+### Legacy Containers
+
+These images are NO LONGER MAINTAINED and updated. They will however
+be available to use should a user choose. They are not
+supported anymore by the Bioconductor Core team.
+
+Bioconductor Core Team: bioc-issue-bot@bioconductor.org
+
+* [bioconductor/devel_base2](https://hub.docker.com/r/bioconductor/devel_base2/)
+* [bioconductor/devel_core2](https://hub.docker.com/r/bioconductor/devel_core2/)
+* [bioconductor/release_base2](https://hub.docker.com/r/bioconductor/release_base2/)
+* [bioconductor/release_core2](https://hub.docker.com/r/bioconductor/release_core2/)
+
+Steffen Neumann: sneumann@ipb-halle.de, Maintained as part of the "PhenoMeNal, funded by Horizon2020 grant 654241"
+
+* [bioconductor/devel_protmetcore2](https://hub.docker.com/r/bioconductor/devel_protmetcore2/)
+* [bioconductor/devel_metabolomics2](https://hub.docker.com/r/bioconductor/devel_metabolomics2/)
+* [bioconductor/release_protmetcore2](https://hub.docker.com/r/bioconductor/release_protmetcore2/)
+* [bioconductor/release_metabolomics2](https://hub.docker.com/r/bioconductor/release_metabolomics2/)
+
+Laurent Gatto: lg390@cam.ac.uk
+
+* [bioconductor/devel_mscore2](https://hub.docker.com/r/bioconductor/devel_mscore2/)
+* [bioconductor/devel_protcore2](https://hub.docker.com/r/bioconductor/devel_protcore2/)
+* [bioconductor/devel_proteomics2](https://hub.docker.com/r/bioconductor/devel_proteomics2/)
+* [bioconductor/release_mscore2](https://hub.docker.com/r/bioconductor/release_mscore2/)
+* [bioconductor/release_protcore2](https://hub.docker.com/r/bioconductor/release_protcore2/)
+* [bioconductor/release_proteomics2](https://hub.docker.com/r/bioconductor/release_proteomics2/)
+
+RGLab: wjiang2@fredhutch.org
+
+* [bioconductor/devel_cytometry2](https://hub.docker.com/r/bioconductor/devel_cytometry2/)
+* [bioconductor/release_cytometry2](https://hub.docker.com/r/bioconductor/release_cytometry2/)
+
+First iteration containers
+
+* bioconductor/devel_base
+* bioconductor/devel_core
+* bioconductor/devel_flow
+* bioconductor/devel_microarray
+* bioconductor/devel_proteomics
+* bioconductor/devel_sequencing
+* bioconductor/devel_metabolomics
+* bioconductor/release_base
+* bioconductor/release_core
+* bioconductor/release_flow
+* bioconductor/release_microarray
+* bioconductor/release_proteomics
+* bioconductor/release_sequencing
+* bioconductor/release_metabolomics
+
+<a name="reason"></a>
+### Reason for deprecation
+
+The new Bioconductor Docker image `bioconductor/bioconductor_docker`
+makes it possible to easily install any package the user chooses since
+all the system dependencies are built in to this new image. The
+previous images did not have all the system dependencies built in to
+the image. The new installation of packages can be done with,
+
+	BiocManager::install(c("package_name", "package_name"))
+
+Other reasons for deprecation:
+
+ - the chain of inheritance of Docker images was too complex and hard
+   to maintain.
+
+ - Hard to extend because there were multiple flavors of images.
+
+ - Naming convention was making things harder to use.
+
+ - Images which were not maintained were not deprecated.
+
+<a name="issues"></a>
+### Reporting Issues
+
+Please report issues with the new set of images on [GitHub Issues](https://github.com/Bioconductor/bioconductor_docker/issues) or
+the [Bioc-devel](mailto:bioc-devel@r-project.org) mailing list.
+
+These issues can be questions about anything related to this piece of
+software such as, usage, extending Docker images, enhancements, and
+bug reports.
 
 <a name="acknowledgements"></a>
 ## Acknowledgements
